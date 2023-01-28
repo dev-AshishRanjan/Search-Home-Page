@@ -20,7 +20,7 @@ const Index = () => {
     name: '',
     sys: '',
     main: '',
-    weather: [],
+    weather: [{ description: '', icon: '', id: 0, main: '' }],
   })
   const [loading, setLoading] = useState(true)
 
@@ -71,8 +71,14 @@ const Index = () => {
         </div>
       )}
       {loading && (
-        <div className={styles.name}>
-          <h2>Loading</h2>
+        <div className={styles.weather}>
+          <div className={styles.card}>
+            <div className={styles.name}>
+              <h2>
+                {data.name} <sup>{data.sys.country}</sup>
+              </h2>
+            </div>
+          </div>
         </div>
       )}
     </div>
