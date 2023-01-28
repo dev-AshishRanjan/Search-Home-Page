@@ -45,6 +45,7 @@ export default function Home() {
         <meta name="description" content="Dynamic Search Starter" />
         <meta name="keywords" content="zorin, search system, ashish" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <title>Search - Zorin</title>
         <link rel="icon" href="/images/search.png" />
       </Head>
       <main className={styles.main}>

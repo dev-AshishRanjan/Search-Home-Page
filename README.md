@@ -38,7 +38,9 @@ The easiest way to deploy your Next.js app is to use the [Vercel Platform](https
 Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
 
 ## wanna use fonts in Next.js
+
 check out on [stackoverflow](https://stackoverflow.com/questions/69388400/nextjs-google-font-is-not-loading-or-displaying-on-the-website).
 
 ## wanna use scss in Next.js
+
 check out on [freeCodeCamp](https://www.freecodecamp.org/news/how-to-use-sass-with-css-modules-in-next-js/).
