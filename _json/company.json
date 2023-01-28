@@ -1,0 +1,11 @@
+{
+  "numbers": 6,
+  "comapnies": [
+    { "name": "Google" },
+    { "name": "Youtube" },
+    { "name": "Wikipedia" },
+    { "name": "Twitter" },
+    { "name": "Amazon" },
+    { "name": "Flipkart" }
+  ]
+}

@@ -1,0 +1,82 @@
+@mixin flexCenter {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.weather {
+  padding: 1rem;
+  border-radius: 0.5rem;
+  @include flexCenter;
+  flex-direction: column;
+  position: absolute;
+  right: 0;
+}
+.card {
+  @include flexCenter;
+  flex-direction: column;
+  justify-content: space-around;
+
+  min-width: 20rem;
+  min-height: 400px;
+  // max-width: 90%;
+  padding: 1rem;
+  border-radius: 1rem;
+  border: 3px solid white;
+  box-shadow: 3px 3px 5px gray, -3px -3px 5px white, inset -3px -3px 5px white,
+    inset 3px 3px 5px gray;
+}
+.name {
+  @include flexCenter;
+  margin: 1rem;
+}
+.name > h2 {
+  font: 1.7rem 'Supermercado One';
+}
+.name > h2 > sup {
+  padding: 0.3rem 0.5rem;
+  background: orange;
+  border-radius: 0.5rem;
+  margin-left: 0.2rem;
+  font-weight: bold;
+  color: white;
+  font-family: 'Ubuntu', cursive;
+}
+.temp {
+  @include flexCenter;
+  margin: 1rem;
+  font: 2rem 'Big Shoulders Stencil Text' !important;
+}
+.temp > h1 > sup {
+  font-weight: 900;
+  font-size: 1.7rem !important;
+}
+.temp2 {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  margin: 1rem;
+  flex-wrap: wrap;
+}
+.icons {
+  @include flexCenter;
+  flex-direction: column;
+  margin-bottom: 1rem;
+}
+
+@media (max-width: 768px) {
+  .weather {
+    font-size: 0.5rem;
+    .card {
+      min-width: 0;
+      min-height: 0;
+      transform: translate(-30%, -80%);
+    }
+    .icons {
+      display: none;
+    }
+    .name > h2 {
+      font: 0.8rem 'Supermercado One';
+    }
+  }
+}

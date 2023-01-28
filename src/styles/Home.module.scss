@@ -1,0 +1,138 @@
+@import url('https://fonts.googleapis.com/css2?family=Big+Shoulders+Stencil+Text:wght@500&family=Festive&family=Inter&family=Lobster+Two:wght@400;700&family=Montserrat&family=Poppins:wght@300&family=Roboto+Mono&family=Sirin+Stencil&family=Splash&family=Stylish&family=Supermercado+One&family=Titillium+Web&family=Ubuntu:wght@300;500;700&display=swap');
+@mixin flexCenter {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.main {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: bold;
+  height: 100vh;
+  width: 100vw;
+  overflow: hidden;
+  background: rgb(238, 238, 238);
+  width: 100%;
+  @include flexCenter;
+  flex-direction: column;
+  color: black;
+
+  .companies {
+    @include flexCenter;
+    gap: 2rem;
+    position: absolute;
+    top: 0;
+    padding: 1.5rem;
+    transition: all 0.3s ease-in-out;
+    overflow: hidden;
+
+    .company {
+      cursor: pointer;
+      font-size: 1.5rem;
+      transition: all 0.3s ease-in-out;
+    }
+    .expand {
+      font-size: 4rem;
+      font-weight: 900;
+    }
+  }
+
+  .second_block {
+    @include flexCenter;
+    form {
+      @include flexCenter;
+      ::placeholder {
+        /* Chrome, Firefox, Opera, Safari 10.1+ */
+        color: black;
+        opacity: 0.5; /* Firefox */
+      }
+
+      :-ms-input-placeholder {
+        /* Internet Explorer 10-11 */
+        color: black;
+      }
+
+      ::-ms-input-placeholder {
+        /* Microsoft Edge */
+        color: black;
+      }
+      .searchBar {
+        outline: none;
+        border: none;
+        background: transparent;
+        font-size: 3.5rem;
+        color: black;
+        text-align: center;
+        z-index: 2;
+        max-width: 80%;
+        transform: translateX(-50%);
+      }
+    }
+  }
+
+  .clock {
+    background: transparent;
+    position: absolute;
+    top: 80%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 8rem;
+    color: rgba(0, 0, 0, 0.5);
+    z-index: 0;
+  }
+
+  .footer {
+    position: absolute;
+    bottom: 0;
+    padding: 1rem;
+    width: 100%;
+    text-align: center;
+    font-size: 0.8rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .main {
+    .companies {
+      justify-content: flex-start;
+      padding: 1.5rem 0;
+      .company {
+        cursor: pointer;
+        font-size: 1rem;
+      }
+      .expand {
+        font-size: 1.7rem;
+      }
+    }
+    .second_block {
+      form {
+        @include flexCenter;
+        margin-top: 3rem;
+
+        .searchBar {
+          outline: none;
+          border: none;
+          background: transparent;
+          font-size: 3rem;
+          color: black;
+          text-align: center;
+          z-index: 2;
+          max-width: 50%;
+          transform: translateX(0%);
+        }
+      }
+      gap: 3rem;
+      flex-direction: column;
+    }
+    .clock {
+      background: transparent;
+      position: absolute;
+      top: 80%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      font-size: 3rem;
+      color: rgba(0, 0, 0, 0.5);
+      z-index: 0;
+    }
+  }
+}
