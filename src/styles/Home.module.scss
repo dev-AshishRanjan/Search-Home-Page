@@ -25,6 +25,8 @@
     padding: 1.5rem;
     transition: all 0.3s ease-in-out;
     overflow: hidden;
+    z-index: 5;
+    backdrop-filter: blur(0.5rem);
 
     .company {
       cursor: pointer;
@@ -101,7 +103,7 @@
         font-size: 1rem;
       }
       .expand {
-        font-size: 1.7rem;
+        font-size: 2rem;
       }
     }
     .second_block {
