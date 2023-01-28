@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import styles from './style.module.scss'
 
-const index = () => {
+const Index = () => {
   const API_KEY = 'f33a484cf794d08d0148764789aaba32'
   const [data, setData] = useState({})
   const [loading, setLoading] = useState(true)
@@ -61,4 +61,4 @@ const index = () => {
   )
 }
 
-export default index
+export default Index;
