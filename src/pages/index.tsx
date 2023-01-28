@@ -171,6 +171,7 @@ export default function Home() {
               onChange={(e) => {
                 setSearchTerm(e.target.value)
               }}
+              value={searchTerm}
             />
           </form>
           <Weather />
