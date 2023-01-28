@@ -33,6 +33,7 @@ export default function Home() {
 
   useEffect(() => {
     var clock: any = document.querySelector('.Home_clock__WKEQI')
+    clock.innerHTML = `${new Date().getHours()} : ${new Date().getMinutes()}`
     setInterval(() => {
       clock.innerHTML = `${new Date().getHours()} : ${new Date().getMinutes()}`
     }, 15000)
