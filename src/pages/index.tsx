@@ -19,7 +19,7 @@ export default function Home() {
   const [Flipkart, setFlipkart] = useState(false)
   const [searchTerm, setSearchTerm] = useState('')
 
-  const handleSubmit = (e: Event) => {
+  const handleSubmit = (e: Event|any) => {
     e.preventDefault()
     location.href = searchURL + searchTerm
     console.log(location.href)
@@ -32,7 +32,7 @@ export default function Home() {
   // },[]);
 
   useEffect(() => {
-    var clock = document.querySelector('.Home_clock__WKEQI')
+    var clock:any = document.querySelector('.Home_clock__WKEQI');
     setInterval(() => {
       clock.innerHTML = `${new Date().getHours()} : ${new Date().getMinutes()}`
     }, 1000)

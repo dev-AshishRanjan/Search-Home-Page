@@ -1,10 +1,18 @@
 import React, { useEffect, useState } from 'react'
 import styles from './style.module.scss'
 
-const Index = () => {
+interface WeatherData{
+  name:string;
+  sys:any;
+  main:any;
+  weather:any;
+}
+
+const Index= () => {
   const API_KEY = 'f33a484cf794d08d0148764789aaba32'
-  const [data, setData] = useState({})
+  const [data, setData] = useState<WeatherData>({name:"",sys:"",main:"",weather:""})
   const [loading, setLoading] = useState(true)
+
 
   useEffect(() => {
     setLoading(true)
@@ -13,9 +21,9 @@ const Index = () => {
         `https://api.openweathermap.org/data/2.5/weather?lat=${position.coords.latitude}&lon=${position.coords.longitude}&appid=${API_KEY}&units=metric`,
       )
         .then((res) => res.json())
-        .then((res) => {
-          setData(res)
-          console.log(res)
+        .then((res:WeatherData) => {
+          setData(res);
+          console.log(res);
         })
     })
     setLoading(false)
