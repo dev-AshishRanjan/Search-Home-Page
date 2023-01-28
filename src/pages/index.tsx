@@ -35,7 +35,7 @@ export default function Home() {
     var clock: any = document.querySelector('.Home_clock__WKEQI')
     setInterval(() => {
       clock.innerHTML = `${new Date().getHours()} : ${new Date().getMinutes()}`
-    }, 1000)
+    }, 15000)
   }, [])
   return (
     <>
