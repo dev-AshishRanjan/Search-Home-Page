@@ -17,10 +17,21 @@ interface Iicons {
 const Index = () => {
   const API_KEY = 'f33a484cf794d08d0148764789aaba32'
   const [data, setData] = useState<WeatherData>({
-    name: '',
-    sys: '',
-    main: '',
-    weather: [{ description: '', icon: '', id: 0, main: '' }],
+    name: 'Delhi',
+    sys: { country: 'IN', sunrise: 1674865969, sunset: 1674905417 },
+    main: {
+      feels_like: 15.85,
+      grnd_level: 1010,
+      humidity: 64,
+      pressure: 1013,
+      sea_level: 1013,
+      temp: 16.48,
+      temp_max: 16.48,
+      temp_min: 16.48,
+    },
+    weather: [
+      { id: 800, main: 'Clear', description: 'clear sky', icon: '01n' },
+    ],
   })
   const [loading, setLoading] = useState(true)
 
