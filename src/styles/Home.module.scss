@@ -11,11 +11,11 @@
   height: 100vh;
   width: 100vw;
   overflow: hidden;
-  background: rgb(238, 238, 238);
+  background: var(--primary-background);
   width: 100%;
   @include flexCenter;
   flex-direction: column;
-  color: black;
+  color: var(--primary-black);
 
   .companies {
     @include flexCenter;
@@ -47,25 +47,25 @@
       @include flexCenter;
       ::placeholder {
         /* Chrome, Firefox, Opera, Safari 10.1+ */
-        color: black;
+        color: var(--primary-black);
         opacity: 0.5; /* Firefox */
       }
 
       :-ms-input-placeholder {
         /* Internet Explorer 10-11 */
-        color: black;
+        color: var(--primary-black);
       }
 
       ::-ms-input-placeholder {
         /* Microsoft Edge */
-        color: black;
+        color: var(--primary-black);
       }
       .searchBar {
         outline: none;
         border: none;
         background: transparent;
         font-size: 3.5rem;
-        color: black;
+        color: var(--primary-black);
         text-align: center;
         z-index: 2;
         max-width: 80%;
@@ -81,7 +81,7 @@
     left: 50%;
     transform: translate(-50%, -50%);
     font-size: 8rem;
-    color: rgba(0, 0, 0, 0.5);
+    color: var(--primary-faded-black);
     z-index: 0;
   }
 
@@ -118,7 +118,7 @@
           border: none;
           background: transparent;
           font-size: 3rem;
-          color: black;
+          color: var(--primary-black);
           text-align: center;
           z-index: 2;
           max-width: 50%;
@@ -135,7 +135,7 @@
       left: 50%;
       transform: translate(-50%, -50%);
       font-size: 3rem;
-      color: rgba(0, 0, 0, 0.5);
+      color: var(--primary-faded-black);
       z-index: 0;
     }
   }

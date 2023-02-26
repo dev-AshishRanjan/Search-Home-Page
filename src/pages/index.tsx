@@ -2,22 +2,24 @@ import Head from 'next/head'
 import Image from 'next/image'
 import styles from '@/styles/Home.module.scss'
 import Weather from '@/components/weather'
-import React, { useState, useEffect } from 'react'
+import React, { useState, useEffect, useRef } from 'react'
 import Company from '../../_json/company.json'
 import { BsGoogle, BsYoutube, BsTwitter } from 'react-icons/bs'
-import { FaWikipediaW, FaAmazon } from 'react-icons/fa'
+import { FaWikipediaW, FaAmazon ,FaLink} from 'react-icons/fa'
 import { SiFlipkart } from 'react-icons/si'
 
 export default function Home() {
-  const [searchURL, setSearchURL] = useState('')
+  const [searchURL, setSearchURL] = useState('https://www.google.com/search?q=')
   const [clicked, setClicked] = useState(false)
-  const [Google, setGoogle] = useState(false)
+  const [Link, setLink] = useState(false)
+  const [Google, setGoogle] = useState(true)
   const [Youtube, setYoutube] = useState(false)
   const [Wikipedia, setWikipedia] = useState(false)
   const [Twitter, setTwitter] = useState(false)
   const [Amazon, setAmazon] = useState(false)
   const [Flipkart, setFlipkart] = useState(false)
-  const [searchTerm, setSearchTerm] = useState('')
+  const [searchTerm, setSearchTerm] = useState('');
+  const inputRef = useRef();
 
   const handleSubmit = (e: Event | any) => {
     e.preventDefault()
@@ -32,6 +34,7 @@ export default function Home() {
   // },[]);
 
   useEffect(() => {
+    inputRef.current.focus();
     var clock: any = document.querySelector('.Home_clock__WKEQI')
     clock.innerHTML = `${new Date().getHours()} : ${new Date().getMinutes()}`
     setInterval(() => {
@@ -52,11 +55,31 @@ export default function Home() {
         <div className={styles.companies}>
           <div
             className={
+              !Link
+                ? `${styles.company}`
+                : `${styles.company} ${styles.expand}`
+            }
+            onClick={() => {
+              setLink(true)
+              setGoogle(false)
+              setYoutube(false)
+              setWikipedia(false)
+              setTwitter(false)
+              setAmazon(false)
+              setFlipkart(false)
+              setSearchURL('')
+            }}
+          >
+            <FaLink />{' '}
+          </div>
+          <div
+            className={
               !Google
                 ? `${styles.company}`
                 : `${styles.company} ${styles.expand}`
             }
             onClick={() => {
+              setLink(false)
               setGoogle(true)
               setYoutube(false)
               setWikipedia(false)
@@ -75,6 +98,7 @@ export default function Home() {
                 : `${styles.company} ${styles.expand}`
             }
             onClick={() => {
+              setLink(false)
               setGoogle(false)
               setYoutube(true)
               setWikipedia(false)
@@ -93,6 +117,7 @@ export default function Home() {
                 : `${styles.company} ${styles.expand}`
             }
             onClick={() => {
+              setLink(false)
               setGoogle(false)
               setYoutube(false)
               setWikipedia(true)
@@ -111,6 +136,7 @@ export default function Home() {
                 : `${styles.company} ${styles.expand}`
             }
             onClick={() => {
+              setLink(false)
               setGoogle(false)
               setYoutube(false)
               setWikipedia(false)
@@ -129,6 +155,7 @@ export default function Home() {
                 : `${styles.company} ${styles.expand}`
             }
             onClick={() => {
+              setLink(false)
               setGoogle(false)
               setYoutube(false)
               setWikipedia(false)
@@ -147,6 +174,7 @@ export default function Home() {
                 : `${styles.company} ${styles.expand}`
             }
             onClick={() => {
+              setLink(false)
               setGoogle(false)
               setYoutube(false)
               setWikipedia(false)
@@ -172,6 +200,7 @@ export default function Home() {
                 setSearchTerm(e.target.value)
               }}
               value={searchTerm}
+              ref={inputRef}
             />
           </form>
           <Weather />
