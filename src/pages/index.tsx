@@ -2,10 +2,10 @@ import Head from 'next/head'
 import Image from 'next/image'
 import styles from '@/styles/Home.module.scss'
 import Weather from '@/components/weather'
-import React, { useState, useEffect, useRef } from 'react'
+import React, { useState, useEffect } from 'react'
 import Company from '../../_json/company.json'
 import { BsGoogle, BsYoutube, BsTwitter } from 'react-icons/bs'
-import { FaWikipediaW, FaAmazon ,FaLink} from 'react-icons/fa'
+import { FaWikipediaW, FaAmazon, FaLink } from 'react-icons/fa'
 import { SiFlipkart } from 'react-icons/si'
 
 export default function Home() {
@@ -19,7 +19,6 @@ export default function Home() {
   const [Amazon, setAmazon] = useState(false)
   const [Flipkart, setFlipkart] = useState(false)
   const [searchTerm, setSearchTerm] = useState('');
-  const inputRef = useRef();
 
   const handleSubmit = (e: Event | any) => {
     e.preventDefault()
@@ -34,7 +33,6 @@ export default function Home() {
   // },[]);
 
   useEffect(() => {
-    inputRef.current.focus();
     var clock: any = document.querySelector('.Home_clock__WKEQI')
     clock.innerHTML = `${new Date().getHours()} : ${new Date().getMinutes()}`
     setInterval(() => {
@@ -200,7 +198,7 @@ export default function Home() {
                 setSearchTerm(e.target.value)
               }}
               value={searchTerm}
-              ref={inputRef}
+              autoFocus
             />
           </form>
           <Weather />
